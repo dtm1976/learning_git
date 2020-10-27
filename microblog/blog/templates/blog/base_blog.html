@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block body_title %}
+    <h2>Blog Page</h2>
+{% endblock %}
+
+{% block block_menu %}
+    <ul class=menu>
+        <li><a href="{% url 'index_url' %}">Start Page</a></li>
+        <li><a href="{% url 'posts_list_url' %}">Posts list</a></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+
+    <p>
+        <br>
+        This is the main page of simple blog implemented in Django
+    </p>
+
+{% endblock %}

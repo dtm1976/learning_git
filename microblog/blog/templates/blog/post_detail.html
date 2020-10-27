@@ -1,0 +1,23 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block body_title %}
+    <h2>Post</h2>
+{% endblock %}
+
+{% block block_menu %}
+    <ul class=menu>
+        <li><a href="{% url 'home_url' %}">Home</a></li>
+        <li><a href="{% url 'posts_list_url' %}">Posts</a></li>
+        <li><a href="{% url 'post_update_url' slug=post.slug %}">Update</a></li>
+        <li><a href="{% url 'post_delete_url' slug=post.slug %}">Delete</a></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+
+    <h3>{{ post.title }}</h3>
+
+    <p> {{ post.body}}</p>
+    <p> {{ post.publish }}</p>
+
+{% endblock %}

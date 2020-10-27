@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+
+  <title>Python 21</title>
+  <head>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+  </head>
+
+  <body>
+      <div class=page>
+          <h1>Python Group | Main Academy</h1>
+
+          {% block block_menu %}
+              <ul class=menu>
+                  <li><a href="{% url 'home_url' %}">Blog</a></li>
+              </ul>
+          {% endblock %}
+
+          {% block body_title %}
+          <h2>Main Page</h2>
+          {% endblock %}
+
+          {% block body %}
+          <h3>
+              Django project start page
+          </h3>
+          {% endblock %}
+      </div>
+  </body>
+
+</html>

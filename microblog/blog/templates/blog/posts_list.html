@@ -1,0 +1,29 @@
+{% extends 'blog/base_blog.html' %}
+
+{% block body_title %}
+    <h2>Posts List</h2>
+{% endblock %}
+
+{% block block_menu %}
+    <ul class=menu>
+        <li><a href="{% url 'home_url' %}">Home</a></li>
+        <li><a href="{% url 'post_create_url' %}">Create Post</a></li>
+    </ul>
+{% endblock %}
+
+{% block body %}
+
+    {% for post in posts %}
+        
+        <!--<h3><a href="{% url 'post_detail_url' slug=post.slug %}">{{ post.title }}</a></h3>-->
+        <h3><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></h3>
+
+        <p>
+            {{ post.body | truncatewords:20}}
+        </p>
+        <p> {{ post.publish }}</p>
+    {% endfor %}
+
+    {% include "./pagination.html" with page=page_obj %}
+
+{% endblock %}
